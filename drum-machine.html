@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            --background-color: rgba(3, 231, 201, 0.192);
+            --toggle-on-white: white;
+        }
+
+        body{
+            background-color: var(--background-color);
+        }
+
+        .sample-name{
+            color: black;
+            font: 24px;
+        }
+        .drum-toggles{
+            display: grid;
+            grid-template-columns: 300px, repeat(16, 1fr);
+            /* grid-template-rows: repeat(8,75px); */
+        }
+
+        .toggle{
+            background-color: transparent;
+            border: 3px solid red;
+        }
+
+        #kick-active-0{
+            width: auto;
+            height: auto;
+            background-color: transparent; 
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="beat-grid">
+
+        <div id="shaker-toggles" class="drum-toggles">
+            <div class="sample-name">
+                <p>Shaker</p>
+            </div>
+        </div>
+        <div id="cl-hat-toggles" class="drum-toggles">
+            <div class="sample-name">
+                <p>Closed Hat</p>
+            </div>
+        </div>
+        <div id="op-hat-toggles" class="drum-toggles">
+            <div class="sample-name">
+                <p>Open Hat</p>
+            </div>
+        </div>
+        <div id="tom-hi-toggles" class="drum-toggles">
+            <div class="sample-name">
+                <p>High Tom</p>
+            </div>
+        </div>
+        <div id="tom-lo-toggles" class="drum-toggles">
+            <div class="sample-name">
+                <p>Low Tom</p>
+            </div>
+        </div>
+        <div id="clap-toggles" class="drum-toggles">
+            <div class="sample-name">
+                <p>Clap</p>
+            </div>
+        </div>
+        <div id="snare-toggles" class="drum-toggles">
+            <div class="sample-name">
+                <p>Snare Drum</p>
+            </div>
+        </div>
+        <div id="kick-toggles" class="drum-toggles">
+            <div class="sample-name">
+                <p>Kick Drum</p>
+            </div>
+            <div id="kick-toggle-0" class="toggle">
+                <div id="kick-active-0"></div>
+            </div>
+            <div id="kick-toggle-1" class="toggle">
+                <div id="kick-active-1"></div>
+            </div>
+            <div id="kick-toggle-2" class="toggle">
+                <div id="kick-active-2"></div>
+            </div>
+            <div id="kick-toggle-3" class="toggle">
+                <div id="kick-active-3"></div>
+            </div>
+            <div id="kick-toggle-4" class="toggle">
+                <div id="kick-active-4"></div>
+            </div>
+            <div id="kick-toggle-5" class="toggle">
+                <div id="kick-active-5"></div>
+            </div>
+            <div id="kick-toggle-6" class="toggle">
+                <div id="kick-active-6"></div>
+            </div>
+            <div id="kick-toggle-7" class="toggle">
+                <div id="kick-active-7"></div>
+            </div>
+            <div id="kick-toggle-8" class="toggle">
+                <div id="kick-active-8"></div>
+            </div>
+            <div id="kick-toggle-9" class="toggle">
+                <div id="kick-active-9"></div>
+            </div>
+            <div id="kick-toggle-10" class="toggle">
+                <div id="kick-active-10"></div>
+            </div>
+            <div id="kick-toggle-11" class="toggle">
+                <div id="kick-active-11"></div>
+            </div>
+            <div id="kick-toggle-12" class="toggle">
+                <div id="kick-active-12"></div>
+            </div>
+            <div id="kick-toggle-13" class="toggle">
+                <div id="kick-active-13"></div>
+            </div>
+            <div id="kick-toggle-14" class="toggle">
+                <div id="kick-active-14"></div>
+            </div>
+            <div id="kick-toggle-15" class="toggle">
+                <div id="kick-active-15"></div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+    let shaker_toggle = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let cl_hat_toggle = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let op_hat_toggle = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let tom_hi_toggle = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let tom_lo_toggle = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let clap_toggle = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let snare_drum_toggle = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let kick_drum_toggle = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    
+    const kick_drum_toggle_0 = document.ElementbyId('kick-toggle-0');
+    const kick_active_0 = document.ElementbyId('kick-active-0');
+    const kick_drum_toggle_1 = document.ElementbyId('kick-toggle-1');
+    const kick_active_1 = document.ElementbyId('kick-active-1');
+    const kick_drum_toggle_2 = document.ElementbyId('kick-toggle-2');
+    const kick_active_2 = document.ElementbyId('kick-active-2');
+    // etc
+
+    kick_drum_toggle_0.onclick = kick_drum_toggle_click_0();
+    kick_drum_toggle_1.onclick = kick_drum_toggle_click_1();
+    kick_drum_toggle_2.onclick = kick_drum_toggle_click_2(); 
+    // etc   
+    
+
+    function kick_drum_toggle_click_0(){
+        if (kick_drum_toggle[0] = 0){
+            kick_drum_toggle[0] = 1;
+            kick_active_0.setAttribute('background-color', 'var(--toggle-on-white');
+        } else { 
+            kick_drum_toggle[0] = 0;
+            kick_active_0.setAttribute('background-color', 'transparent');
+        };
+    };
+    // etc
+
+    snare_drum_toggle_1.onclick = snare_drum_toggle();
+
+    function snare_drum_toggle(){
+        if (snare_drum_toggle[x] = 0){
+            snare_drum_toggle[x] = 1;
+        } else { 
+            snare_drum_toggle[x] = 0;
+        }
+    };
+
+    playbackButton.onclick = playbackMaster(){
+        playbackKick();
+        playbackSnare();
+        playbackClap();
+        playbackTomLo();
+        playbackTomHi();
+        playbackOpHat();
+        playbackClHat();
+        playbackShaker();
+    };
+
+    function playbackKick(){
+        // On playback, loop through 16 iterations
+        // For the first 15 iterations, do the following
+        for (countKick = 0, countKick < 16, countKick++){
+            if (countKick < 15) {
+                if (kick_drum_toggle[countKick]) === 0){
+                    countKick++;
+                } else { 
+                    // play audio 
+                    countKick++;
+                }
+            } else {
+                if (kick_drum_toggle[countKick]) === 0){
+                    countKick = 0;
+                } else { 
+                    // play audio 
+                    countKick = 0;
+                }
+            };
+        };
+    };
+        
+    function playbackSnare(){
+        for (countSnare = 0, countSnare < 16, countSnare++){
+            if (countSnare < 14) {
+                if (snare_drum_toggle[countSnare]) === 0){
+                    countSnare++;
+                } else { 
+                    // play audio 
+                    countSnare++;
+                }
+            } else {
+                if (snare_drum_toggle[countSnare]) === 0){
+                    countSnare = 0;
+                } else { 
+                    // play audio 
+                    countSnare = 0;
+                }
+            };
+        };
+
+    };
+
+</script>
+
+</html>
+
